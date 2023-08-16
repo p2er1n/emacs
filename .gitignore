@@ -1,0 +1,10 @@
+# ignore everything include directories
+*
+
+# un-ignore these dirs and its substree
+!lisp/
+!lisp/**
+
+# un-ignore these files
+!init.el
+!.gitignore
