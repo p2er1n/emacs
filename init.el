@@ -50,9 +50,14 @@
 						      (interactive)
 						      (message "*Scratch* buffer should not be saved!"))))))
 
-;; my own shit packages
+;; builtin and local packages
 
 (require 'yiyan-frame-title)
+
+(progn
+  ;;open local emacs server
+  (server-force-delete)
+  (server-start))
 
 ;; third-party packages
 
