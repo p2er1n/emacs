@@ -138,8 +138,12 @@
 (use-package geiser-guile
   :after geiser)
 ;;org2ctex
-;;(use-package org2ctex
-;;  :config (org2ctex-toggle t))
+;; delay the loading of the package to the first use of org-export-dispatch
+(add-hook 'org-mode-hook (lambda ()
+			  (advice-add 'org-export-dispatch :before
+				      (lambda (r)
+					(use-package org2ctex
+					  :config (org2ctex-toggle t))))))
 ;;fanyi
 (use-package fanyi
   :ensure t
