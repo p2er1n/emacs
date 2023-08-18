@@ -43,6 +43,13 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "/lisp"))
 
+(add-hook 'lisp-interaction-mode-hook
+	  (lambda ()
+	    (let ((local-map (current-local-map)))
+	      (define-key local-map (kbd "C-x C-s") (lambda ()
+						      (interactive)
+						      (message "*Scratch* buffer should not be saved!"))))))
+
 ;; my own shit packages
 
 (require 'yiyan-frame-title)
@@ -148,6 +155,10 @@
   (setq telega-server-libs-prefix "/home/user/Documents/aur-builds/telegram-tdlib-git/pkg/telegram-tdlib-git/usr")
   (setq telega-proxies
 	'((:server "127.0.0.1" :port 7890 :enable t :type (:@type "proxyTypeSocks5")))))
+;;nov
+(use-package nov
+  :config
+  (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -167,10 +178,10 @@
  '(erc-sasl-user "peerin")
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(xpm ement telega fanyi org2ctex geiser-guile geiser material-theme
-	 elfeed goggles beacon vue-mode zig-mode eat tempel-collection
-	 tempel corfu eglot vertico iedit cmake-mode google-translate
-	 slime elvish-mode go-mode)))
+   '(nov posframe xpm ement telega fanyi org2ctex geiser-guile geiser
+	 material-theme elfeed goggles beacon vue-mode zig-mode eat
+	 tempel-collection tempel corfu eglot vertico iedit cmake-mode
+	 google-translate slime elvish-mode go-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
