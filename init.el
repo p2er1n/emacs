@@ -54,6 +54,8 @@
 
 (require 'yiyan-frame-title)
 
+(require 'simpler)
+
 (progn
   ;;open local emacs server
   (server-force-delete)
@@ -187,10 +189,11 @@
  '(erc-sasl-user "peerin")
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(nov posframe xpm ement telega fanyi org2ctex geiser-guile geiser
-	 material-theme elfeed goggles beacon vue-mode zig-mode eat
-	 tempel-collection tempel corfu eglot vertico iedit cmake-mode
-	 google-translate slime elvish-mode go-mode)))
+   '(lua-mode nov posframe xpm ement telega fanyi org2ctex geiser-guile
+	      geiser material-theme elfeed goggles beacon vue-mode
+	      zig-mode eat tempel-collection tempel corfu eglot
+	      vertico iedit cmake-mode google-translate slime
+	      elvish-mode go-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
