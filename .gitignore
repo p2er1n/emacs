@@ -8,3 +8,4 @@
 # un-ignore these files
 !init.el
 !.gitignore
+!templates

@@ -1,0 +1,27 @@
+emacs-lisp-mode
+
+(header ";;; " p " --- " p "  -*- lexical-binding:t -*-
+
+;; Author: " p "
+;; Version: " p "
+;; Package-Requires: (" p ")
+;; Keywords: " p "
+;; URL: " p "
+
+;;; Commentary:
+
+;; " p "
+
+")
+
+org-mode
+
+(header
+"#+title: " p "
+#+author: " p "
+#+date: " p "
+	
+")
+
+
+
