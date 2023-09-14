@@ -51,6 +51,23 @@
 						      (message "*Scratch* buffer should not be saved!"))))))
 
 ;; builtin and local packages
+;;org-mode
+(use-package org
+  :config
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+  (setq org-image-actual-width nil)
+  (defvar my/new-article-directory "~/rlog/")
+  (defvar my/new-article-author "Peerin")
+  (defun my/new-article (path)
+    "scaffold a new article."
+    (interactive "F")
+    (if (file-directory-p path)
+	(message "cannot specify a directory!")
+      (find-file path)
+      (insert (concat "#+title: " (file-name-base path) "\n"
+		      "#+author: " my/new-article-author "\n"
+		      "#+date: " "<" (current-time-string) ">\n"
+		      "\n")))))
 
 (require 'yiyan-frame-title)
 
@@ -62,10 +79,6 @@
   (server-start))
 
 ;; third-party packages
-
-;;org-mode
-(use-package org
-  :config   (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0)))
 ;;slime
 (progn
   (setq inferior-lisp-program "/usr/bin/sbcl"))
@@ -136,7 +149,7 @@
 ;;geiser
 (use-package geiser
   )
-;;geiser
+;;geiser-guile
 (use-package geiser-guile
   :after geiser)
 ;;org2ctex
