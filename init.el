@@ -78,6 +78,15 @@
   (server-force-delete)
   (server-start))
 
+;;awesome-tray(local)
+(progn
+  (require 'awesome-tray)
+  (make-thread
+   (lambda ()
+     (sleep-for 3)
+     (awesome-tray-mode 1))
+   "enable awesome-tray-mode"))
+
 ;; third-party packages
 ;;slime
 (progn
@@ -155,10 +164,10 @@
 ;;org2ctex
 ;; delay the loading of the package to the first use of org-export-dispatch
 (add-hook 'org-mode-hook (lambda ()
-			  (advice-add 'org-export-dispatch :before
-				      (lambda (r)
-					(use-package org2ctex
-					  :config (org2ctex-toggle t))))))
+			   (advice-add 'org-export-dispatch :before
+				       (lambda (r)
+					 (use-package org2ctex
+					   :config (org2ctex-toggle t))))))
 ;;fanyi
 (use-package fanyi
   :ensure t
