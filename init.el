@@ -83,7 +83,7 @@
   (require 'awesome-tray)
   (make-thread
    (lambda ()
-     (sleep-for 3)
+     (sleep-for 5)
      (awesome-tray-mode 1))
    "enable awesome-tray-mode"))
 

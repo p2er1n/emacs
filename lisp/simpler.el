@@ -91,7 +91,8 @@
 	    ([?\C-x] . kill-region)
 	    ([?\C-v] . yank)
 	    ([?\C-z] . undo)
-	    ([?\C-f] . isearch-forward))
+	    ([?\C-f] . isearch-forward)
+	    ([?\C-a] . mark-whole-buffer))
   (simpler-mode--outlook)
   (simpler-mode--menu))
 
